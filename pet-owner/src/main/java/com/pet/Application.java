@@ -1,4 +1,4 @@
-package hello.world;
+package com.pet;
 
 import io.micronaut.runtime.Micronaut;
 
