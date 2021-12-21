@@ -37,6 +37,13 @@ public class PetOwnerCliClient {
         this.petTypeService = petTypeService;
     }
 
+    public void performDatabaseOperations() {
+        performFindAll();
+        Owner owner = performSave();
+        performFindOne(owner.getId());
+        performDelete(owner);
+        performFindAll();
+    }
     public Owner initOwner(){
         Owner owner = new Owner();
         owner.setFirstName("Foo");
@@ -108,5 +115,4 @@ public class PetOwnerCliClient {
             }
         }
     }
-
 }
