@@ -13,7 +13,7 @@ public class Vet implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
-    private Set<Speciality> specialties = new HashSet<>();
+    private Set<Specialty> specialties = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -39,11 +39,11 @@ public class Vet implements Serializable {
         this.lastName = lastName;
     }
 
-    public Set<Speciality> getSpecialties() {
+    public Set<Specialty> getSpecialties() {
         return specialties;
     }
 
-    public void setSpecialties(Set<Speciality> specialties) {
+    public void setSpecialties(Set<Specialty> specialties) {
         this.specialties = specialties;
     }
 
