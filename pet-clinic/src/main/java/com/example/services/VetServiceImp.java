@@ -63,7 +63,7 @@ public class VetServiceImp implements VetService {
                 log.error("Exception: " + e.toString());
             }
         }
-
+        return Optional.ofNullable(vet);
     }
 
     @Override
