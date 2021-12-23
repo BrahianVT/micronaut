@@ -5,7 +5,8 @@ import org.bson.codecs.pojo.annotations.BsonProperty;
 
 import java.time.LocalDate;
 
-public class VetReview {
+public class
+VetReview {
     private String reviewId, comment;
     private Long vetId;
     private Double rating;
