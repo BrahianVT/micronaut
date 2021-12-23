@@ -2,6 +2,8 @@ package com.pet.service;
 
 import com.pet.domain.PetType;
 import com.pet.repository.PetTypeRepository;
+import com.pet.service.dto.PetTypeDTO;
+import com.pet.service.mapper.PetTypeMapper;
 import io.micronaut.data.model.Page;
 import io.micronaut.data.model.Pageable;
 import io.micronaut.transaction.annotation.ReadOnly;
@@ -18,31 +20,35 @@ public class PetTypeServiceImp  implements PetTypeService {
 
     private final Logger log = LoggerFactory.getLogger(PetTypeServiceImp.class);
     private final PetTypeRepository petTypeRepository;
+    private final PetTypeMapper petTypeMapper;
 
-    public PetTypeServiceImp(PetTypeRepository petTypeRepository){
+    public PetTypeServiceImp(PetTypeRepository petTypeRepository, PetTypeMapper petTypeMapper){
+        this.petTypeMapper = petTypeMapper;
         this.petTypeRepository = petTypeRepository;
     }
 
     @Override
-    public PetType save(PetType petType) {
+    public PetTypeDTO save(PetTypeDTO petTypeDto) {
+        PetType petType = petTypeMapper.toEntity(petTypeDto);
+        petType = petTypeRepository.mergeAnSave(petType);
         log.debug(" Save PetType");
-        return petTypeRepository.mergeAnSave(petType);
+        return petTypeMapper.toDto(petType);
     }
 
     @Override
     @ReadOnly
     @Transactional
-    public Page<PetType> findAll(Pageable pageable) {
+    public Page<PetTypeDTO> findAll(Pageable pageable) {
         log.debug("Find all PetType");
-        return petTypeRepository.findAll(pageable);
+        return petTypeRepository.findAll(pageable).map(petTypeMapper::toDto);
     }
 
     @Override
     @ReadOnly
     @Transactional
-    public Optional<PetType> findOne(Long id) {
+    public Optional<PetTypeDTO> findOne(Long id) {
         log.debug("Find one petType" + id);
-        return petTypeRepository.findById(id);
+        return petTypeRepository.findById(id).map(petTypeMapper::toDto);
     }
 
     @Override
