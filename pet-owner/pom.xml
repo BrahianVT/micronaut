@@ -121,6 +121,13 @@
       <artifactId>testcontainers</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>1.4.2.Final</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -147,6 +154,11 @@
               <groupId>io.micronaut.data</groupId>
               <artifactId>micronaut-data-processor</artifactId>
               <version>${micronaut.data.version}</version>
+            </path>
+            <path>
+              <groupId>org.mapstruct</groupId>
+              <artifactId>mapstruct</artifactId>
+              <version>1.4.2.Final</version>
             </path>
           </annotationProcessorPaths>
           <compilerArgs>
