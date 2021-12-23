@@ -1,6 +1,6 @@
-package com.example.config.repository;
+package com.example.repository;
 
-import com.example.config.domain.VetReview;
+import com.example.domain.VetReview;
 
 import java.util.List;
 

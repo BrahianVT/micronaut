@@ -1,7 +1,7 @@
-package com.example.config.service;
+package com.example.service;
 
-import com.example.config.domain.VetReview;
-import com.example.config.repository.VetReviewRepository;
+import com.example.domain.VetReview;
+import com.example.repository.VetReviewRepository;
 import jakarta.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

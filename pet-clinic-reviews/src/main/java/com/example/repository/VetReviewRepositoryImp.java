@@ -1,7 +1,7 @@
-package com.example.config.repository;
+package com.example.repository;
 
 import com.example.config.MongoConfiguration;
-import com.example.config.domain.VetReview;
+import com.example.domain.VetReview;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import jakarta.inject.Singleton;

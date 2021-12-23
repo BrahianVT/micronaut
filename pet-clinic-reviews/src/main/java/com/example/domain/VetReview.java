@@ -1,4 +1,4 @@
-package com.example.config.domain;
+package com.example.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.bson.codecs.pojo.annotations.BsonProperty;

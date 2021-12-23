@@ -1,6 +1,6 @@
-package com.example.config.service;
+package com.example.service;
 
-import com.example.config.domain.VetReview;
+import com.example.domain.VetReview;
 
 import java.util.List;
 
