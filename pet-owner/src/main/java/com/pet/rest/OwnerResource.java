@@ -6,7 +6,7 @@ import com.pet.service.OwnerService;
 import com.pet.service.dto.OwnerDTO;
 import com.pet.utils.HeaderUtil;
 import com.pet.utils.PaginationUtil;
-import io.micronaut.context.annotation.Value;
+import io.micronaut.context.annotation.Property;
 import io.micronaut.core.version.annotation.Version;
 import io.micronaut.data.model.Page;
 import io.micronaut.data.model.Pageable;
@@ -29,13 +29,12 @@ public class OwnerResource {
     private final Logger log = LoggerFactory.getLogger(OwnerResource.class);
     private final String ENTITY_NAME = "owner";
 
-    @Value("${micronaut.application.name}")
+    @Property(name = "micronaut.application.name")
     private String applicationName;
 
     private final OwnerService ownerService;
 
-    public OwnerResource(String applicationName, OwnerService ownerService) {
-        this.applicationName = applicationName;
+    public OwnerResource(OwnerService ownerService) {
         this.ownerService = ownerService;
     }
 

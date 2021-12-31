@@ -8,10 +8,11 @@ import com.pet.service.mapper.OwnerMapper;
 import io.micronaut.data.model.Page;
 import io.micronaut.data.model.Pageable;
 import io.micronaut.transaction.annotation.ReadOnly;
-import jakarta.inject.Singleton;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Singleton;
 import javax.transaction.Transactional;
 import java.util.Optional;
 
