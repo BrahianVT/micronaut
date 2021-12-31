@@ -17,7 +17,7 @@ public interface SpecialtyRepository {
     @Select("SELECT * FROM petclinic.specialties WHERE id = #{id}")
     Specialty findById(@Param("id") Long id) throws  Exception;
 
-    @Select("SELECT * FROM petclinic.specialties UPPER(name) = #{name}")
+    @Select("SELECT * FROM petclinic.specialties  WHERE UPPER(name) = #{name}")
     Specialty findByName(@Param("name") String name) throws Exception;
 
     @Select({"INSERT INTO petclinic.specialties(id, name)" +
