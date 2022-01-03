@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.inject.Singleton;
+
 import javax.transaction.Transactional;
 import java.util.Optional;
 
@@ -28,7 +29,7 @@ public class OwnerServiceImp implements OwnerService{
     }
     @Override
     public OwnerDTO save(OwnerDTO ownerDTO) {
-        log.debug("Request to save Owner :" + ownerDTO);
+        log.debug("Request to save Owner : " + ownerDTO);
         Owner owner = ownerMapper.toEntity(ownerDTO);
         owner = ownerRepository.mergeAnSave(owner);
         return ownerMapper.toDto(owner);
@@ -52,7 +53,7 @@ public class OwnerServiceImp implements OwnerService{
 
     @Override
     public void delete(Long id) {
-        log.debug("Request to delete owner :" + id);
+        log.debug("Request to delete owner : " + id);
         ownerRepository.deleteById(id);
     }
 }

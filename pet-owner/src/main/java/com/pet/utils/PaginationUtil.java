@@ -1,13 +1,14 @@
 package com.pet.utils;
 
-import com.sun.xml.bind.marshaller.Messages;
+
+import java.text.MessageFormat;
 import io.micronaut.core.type.MutableHeaders;
 import io.micronaut.data.model.Page;
 import io.micronaut.http.uri.UriBuilder;
 
 public class PaginationUtil {
     private static final String HEADER_X_TOTAL_COUNT = "X-Total-Count";
-    private static final String HEADER_LINK_FORMAT = "<{0}; rel=\"{1}\">";
+    private static final String HEADER_LINK_FORMAT = "<{0}>; rel=\"{1}\"";
 
     private PaginationUtil(){}
     public static <T> void generatePaginationHttpHeaders(MutableHeaders headers, UriBuilder uriBuilder, Page<T> page){
@@ -29,7 +30,7 @@ public class PaginationUtil {
     }
 
     private static String prepareLink(UriBuilder uriBuilder, int pageNumber, int pageSize, String relType){
-        return Messages.format(HEADER_LINK_FORMAT, preparePageUri(uriBuilder, pageNumber, pageSize), relType);
+        return MessageFormat.format(HEADER_LINK_FORMAT, preparePageUri(uriBuilder, pageNumber, pageSize), relType);
     }
 
     private static String preparePageUri(UriBuilder uriBuilder, int pageNumber, int pageSize){

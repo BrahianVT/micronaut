@@ -28,7 +28,7 @@ public class Owner implements Serializable {
     @Column(name="telephone")
     private String telephone;
 
-    @OneToMany()
+    @OneToMany(mappedBy = "owner", orphanRemoval = true, cascade = CascadeType.ALL)
     private Set<Pet> pets = new HashSet<>();
 
     public long getId() {
