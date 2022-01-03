@@ -30,8 +30,6 @@ public interface OwnerMapper extends EntityMapper<OwnerDTO, Owner>{
         dto.setLastName(owner.getLastName());
         dto.setAddress(owner.getAddress());
         Set<PetDTO> pets = new HashSet<>();
-        System.out.println("############# Check the size: " + owner.getPets().size());
-        log.info("############# Check the size: " + owner.getPets().size());
         for(Pet p: owner.getPets()){
             PetDTO pt = new PetDTO();
             pt.setId(p.getId());

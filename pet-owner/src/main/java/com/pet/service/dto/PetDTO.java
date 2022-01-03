@@ -1,5 +1,6 @@
 package com.pet.service.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.micronaut.core.annotation.Introspected;
 
 import java.io.Serializable;
@@ -11,6 +12,7 @@ import java.util.Set;
 public class PetDTO  implements Serializable {
     private Long id;
     private String name;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthDate;
 
     private Set<VisitDTO> visits = new HashSet<>();
