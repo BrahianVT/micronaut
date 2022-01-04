@@ -30,3 +30,25 @@ jpa:
         show_sql: false
         dialect: org.hibernate.dialect.PostgreSQL95Dialect
         enable_lazy_load_no_trans: true
+
+
+
+security:
+  enabled: true
+  authentication: session
+  session:
+    enabled: true
+  endpoints:
+    login:
+      enabled: true
+    logout: true
+
+identity-store:
+  users:
+    alice: alice@1
+    bob: bob@2
+    charlie: charlie@3
+  roles:
+    alice: ADMIN
+    bob: VIEW
+    charlie: VIEW

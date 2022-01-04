@@ -130,7 +130,14 @@
       <artifactId>jackson-datatype-problem</artifactId>
       <version>0.24.0</version>
     </dependency>
-
+    <dependency>  <!-- Enable security- session-->
+      <groupId>io.micronaut.security</groupId>
+      <artifactId>micronaut-security</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.security</groupId>
+      <artifactId>micronaut-security-session</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
