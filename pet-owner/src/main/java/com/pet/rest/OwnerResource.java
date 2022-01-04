@@ -16,6 +16,8 @@ import io.micronaut.http.annotation.*;
 import io.micronaut.http.uri.UriBuilder;
 import io.micronaut.scheduling.TaskExecutors;
 import io.micronaut.scheduling.annotation.ExecuteOn;
+import io.micronaut.security.annotation.Secured;
+import io.micronaut.security.rules.SecurityRule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,6 +27,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller("/api")
+@Secured(SecurityRule.IS_AUTHENTICATED)
 public class OwnerResource {
     private final Logger log = LoggerFactory.getLogger(OwnerResource.class);
     private final String ENTITY_NAME = "owner";

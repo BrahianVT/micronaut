@@ -13,6 +13,19 @@ micronaut:
         names:
           - 'X-API-VERSION'
           - 'Accept-Version'
+  security:
+    enabled: true
+    authentication: session
+    session:
+      enabled: true
+    endpoints:
+      login:
+        enabled: true
+      logout:
+        enabled: true
+    intercept-url-map:
+      - pattern: /api/visits
+        access: isAnonymous()
 datasources:
   default:
     url: jdbc:postgresql://localhost:5432/postgres
@@ -33,15 +46,7 @@ jpa:
 
 
 
-security:
-  enabled: true
-  authentication: session
-  session:
-    enabled: true
-  endpoints:
-    login:
-      enabled: true
-    logout: true
+
 
 identity-store:
   users:
