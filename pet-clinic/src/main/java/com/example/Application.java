@@ -9,18 +9,7 @@ import jakarta.inject.Singleton;
 @Singleton
 public class Application {
 
-    private final PetClinicCliClient petClinicCliClient;
-
-    public Application(PetClinicCliClient petClinicCliClient) {
-        this.petClinicCliClient = petClinicCliClient;
-    }
-
     public static void main(String[] args) {
         Micronaut.run(Application.class, args);
-    }
-
-    @EventListener
-    void init(StartupEvent event){
-        petClinicCliClient.performDatabaseOperations();
     }
 }
