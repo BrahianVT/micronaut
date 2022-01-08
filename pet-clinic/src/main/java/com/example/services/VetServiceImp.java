@@ -5,10 +5,10 @@ import com.example.domain.Vet;
 import com.example.repository.SpecialtyRepository;
 import com.example.repository.VetRepository;
 import io.micronaut.core.util.CollectionUtils;
-import jakarta.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Singleton;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.Set;

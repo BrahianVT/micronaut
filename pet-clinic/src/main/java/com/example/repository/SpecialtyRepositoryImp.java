@@ -1,10 +1,10 @@
 package com.example.repository;
 
 import com.example.domain.Specialty;
-import jakarta.inject.Singleton;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import javax.inject.Singleton;
 import java.util.Collection;
 import java.util.Set;
 

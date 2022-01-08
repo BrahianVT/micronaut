@@ -2,10 +2,10 @@ package com.example.repository;
 
 
 import com.example.domain.Vet;
-import jakarta.inject.Singleton;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import javax.inject.Singleton;
 import java.util.Collection;
 
 @Singleton

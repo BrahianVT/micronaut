@@ -1,12 +1,12 @@
 package com.example;
 
-import com.example.utils.PetClinicCliClient;
-import io.micronaut.context.event.StartupEvent;
-import io.micronaut.runtime.Micronaut;
-import io.micronaut.runtime.event.annotation.EventListener;
-import jakarta.inject.Singleton;
 
-@Singleton
+import io.micronaut.runtime.Micronaut;
+
+import javax.inject.Singleton;
+
+
+
 public class Application {
 
     public static void main(String[] args) {
