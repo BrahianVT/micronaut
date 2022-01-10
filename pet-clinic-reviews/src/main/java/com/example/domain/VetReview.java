@@ -1,6 +1,8 @@
 package com.example.domain;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.bson.codecs.pojo.annotations.BsonCreator;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
 import java.time.LocalDate;
@@ -11,6 +13,8 @@ public class VetReview {
     private Double rating;
     private LocalDate dateAdded;
 
+    @BsonCreator
+    @JsonCreator
     public VetReview(
             @JsonProperty("reviewId") @BsonProperty("reviewId") String reviewId,
             @JsonProperty("comment") @BsonProperty("comment") String comment,
