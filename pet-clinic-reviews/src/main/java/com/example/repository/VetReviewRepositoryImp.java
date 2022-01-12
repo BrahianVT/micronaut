@@ -4,8 +4,8 @@ import com.example.config.MongoConfiguration;
 import com.example.domain.VetReview;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
-import jakarta.inject.Singleton;
 
+import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.List;
 

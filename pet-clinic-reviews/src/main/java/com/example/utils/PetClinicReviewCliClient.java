@@ -5,10 +5,10 @@ import com.example.service.VetReviewService;
 import com.mongodb.client.MongoClient;
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.core.util.CollectionUtils;
-import jakarta.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Singleton;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;

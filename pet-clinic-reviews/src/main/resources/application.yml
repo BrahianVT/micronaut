@@ -1,6 +1,8 @@
 micronaut:
   application:
     name: petClinicReviews
+
+
 mongodb:
   uri: mongodb://localhost:27017/pet-clinic-reviews
   databaseName: pet-clinic-reviews

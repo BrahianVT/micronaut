@@ -2,10 +2,10 @@ package com.example.service;
 
 import com.example.domain.VetReview;
 import com.example.repository.VetReviewRepository;
-import jakarta.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Singleton;
 import java.util.List;
 
 @Singleton
