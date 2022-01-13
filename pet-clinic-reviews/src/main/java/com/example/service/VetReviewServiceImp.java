@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.inject.Singleton;
 import java.util.List;
+import java.util.UUID;
 
 @Singleton
 public class VetReviewServiceImp  implements VetReviewService {
@@ -32,6 +33,19 @@ public class VetReviewServiceImp  implements VetReviewService {
     @Override
     public VetReview save(VetReview vetReview) {
         log.debug("VetReview save :" + vetReview);
+        if (vetReview.getReviewId() == null) {
+            return insertVetReview(vetReview);
+        } else {
+            return updateVetReview(vetReview);
+        }
+    }
+
+    private VetReview insertVetReview(VetReview vetReview) {
+        vetReview.setReviewId(UUID.randomUUID().toString());
+        return vetReviewRepository.save(vetReview);
+    }
+
+    private VetReview updateVetReview(VetReview vetReview) {
         return vetReviewRepository.save(vetReview);
     }
 
