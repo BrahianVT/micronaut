@@ -101,6 +101,10 @@
   <artifactId>jackson-datatype-problem</artifactId>
   <version>0.24.0</version>
 </dependency>
+  <dependency>
+    <groupId>io.micronaut.kafka</groupId>
+    <artifactId>micronaut-kafka</artifactId>
+  </dependency>
 <!-- Security
 <dependency>
   <groupId>io.micronaut.security</groupId>

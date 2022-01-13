@@ -1,9 +1,16 @@
 micronaut:
   application:
     name: petClinicReviews
+  server:
+    port: 8083
 
 
 mongodb:
   uri: mongodb://localhost:27017/pet-clinic-reviews
   databaseName: pet-clinic-reviews
   collectionName: vet-reviews
+
+
+kafka:
+  bootstrap:
+    servers: localhost:9094
