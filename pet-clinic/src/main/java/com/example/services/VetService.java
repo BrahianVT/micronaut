@@ -10,4 +10,5 @@ public interface VetService {
     Collection<Vet> findAll() throws Exception;
     Optional<Vet> findOne(Long id) throws Exception;
     void delete(Long id) throws Exception;
+    void updateVetAverageRating(Long vetId, Double rating) throws Exception;
 }

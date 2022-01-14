@@ -95,4 +95,20 @@ public class VetServiceImp implements VetService {
            });
         }
     }
+
+    @Override
+    public void updateVetAverageRating(Long vetId, Double rating) throws Exception {
+        log.debug("Request to update vet rating, id: {}, rating: {}", vetId, rating);
+        Optional<Vet> oVet = findOne(vetId);
+
+        if(oVet.isPresent()) {
+            Double averageRating = oVet.get().getAverageRating() != null ? oVet.get().getAverageRating() : 0D;
+            Long ratingCount = oVet.get().getRatingCount() != null ? oVet.get().getRatingCount() : 0L;
+            Double newAvgRating = ((averageRating * ratingCount) + rating) / (ratingCount + 1);
+            Long newRatingCount = ratingCount + 1;
+
+            vetRepository.updateVetAverageRating(vetId, newAvgRating, newRatingCount);
+        }
+
+    }
 }

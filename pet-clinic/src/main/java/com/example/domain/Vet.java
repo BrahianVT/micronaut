@@ -13,6 +13,8 @@ public class Vet implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
+    private Double averageRating;
+    private Long ratingCount;
     private Set<Specialty> specialties = new HashSet<>();
 
     public Long getId() {
@@ -37,6 +39,22 @@ public class Vet implements Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Double getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(Double averageRating) {
+        this.averageRating = averageRating;
+    }
+
+    public Long getRatingCount() {
+        return ratingCount;
+    }
+
+    public void setRatingCount(Long ratingCount) {
+        this.ratingCount = ratingCount;
     }
 
     public Set<Specialty> getSpecialties() {

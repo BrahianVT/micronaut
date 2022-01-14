@@ -27,6 +27,9 @@ micronaut:
         url: http://localhost:8888/auth/realms/master/protocol/openid-connect/token
         auth-method: client-secret-post
 
+kafka:
+  bootstrap:
+    servers: localhost:9094
 
 datasources:
   default:
