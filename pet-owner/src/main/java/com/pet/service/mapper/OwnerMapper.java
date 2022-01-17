@@ -29,6 +29,8 @@ public interface OwnerMapper extends EntityMapper<OwnerDTO, Owner>{
         dto.setFirstNam(owner.getFirstName());
         dto.setLastName(owner.getLastName());
         dto.setAddress(owner.getAddress());
+        dto.setCity(owner.getCity());
+        dto.setTelephone(owner.getTelephone());
         Set<PetDTO> pets = new HashSet<>();
         for(Pet p: owner.getPets()){
             PetDTO pt = new PetDTO();

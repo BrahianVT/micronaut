@@ -11,7 +11,14 @@ public class OwnerMapperImp  implements OwnerMapper {
 
     @Override
     public Owner toEntity(OwnerDTO dto) {
-        return null;
+        Owner owner = new Owner();
+        owner.setId(dto.getId());
+        owner.setTelephone(dto.getTelephone());
+        owner.setAddress(dto.getAddress());
+        owner.setCity(dto.getCity());
+        owner.setLastName(dto.getLastName());
+        owner.setFirstName(dto.getFirstNam());
+        return owner;
     }
     @Override
     public List<Owner> toEntity(List<OwnerDTO> dtoList) {

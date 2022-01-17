@@ -71,8 +71,7 @@ public class OwnerDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "OwnerDTO{" +
-                "id=" + id +
+        return "id=" + id +
                 ", firstNam='" + firstNam + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +

@@ -45,7 +45,7 @@ public class OwnerResource {
     @ExecuteOn(TaskExecutors.IO)
     public HttpResponse<OwnerDTO> createOwner(@Body OwnerDTO ownerDTO) throws URISyntaxException {
         log.debug("Rest createOwner " + ownerDTO);
-        if(ownerDTO.getId() != null)throw new BadRequestAlertException("Id can be null", ENTITY_NAME, "idexists");
+        //if(ownerDTO.getId() != null)throw new BadRequestAlertException("Id can be null", ENTITY_NAME, "idexists");
         OwnerDTO result = ownerService.save(ownerDTO);
         URI location = new URI("/api/owners/" + result.getId());
         return HttpResponse.created(result).headers(headers -> {
@@ -58,7 +58,7 @@ public class OwnerResource {
     @ExecuteOn(TaskExecutors.IO)
     public HttpResponse<OwnerDTO> updateOwner(@Body OwnerDTO ownerDTO) throws URISyntaxException {
         log.debug("Rest request to to update Owner :" + ownerDTO);
-        if(ownerDTO.getId() == null) throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+        if(ownerDTO.getId() == null) {throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");}
 
         OwnerDTO result = ownerService.save(ownerDTO);
         return HttpResponse.ok(result).headers(headers ->

@@ -11,7 +11,7 @@ public class Owner implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name="first_name")
     private String firstName;
@@ -31,11 +31,50 @@ public class Owner implements Serializable {
     @OneToMany(mappedBy = "owner", orphanRemoval = true, cascade = CascadeType.ALL)
     private Set<Pet> pets = new HashSet<>();
 
-    public long getId() {
+
+    public Owner firstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+    public Owner lastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+    public Owner address(String address) {
+        this.address = address;
+        return this;
+    }
+    public Owner city(String city) {
+        this.city = city;
+        return this;
+    }
+
+    public Owner telephone(String telephone) {
+        this.telephone = telephone;
+        return this;
+    }
+
+    public Owner pets(Set<Pet> pets) {
+        this.pets = pets;
+        return this;
+    }
+
+    public Owner addPet(Pet pet) {
+        this.pets.add(pet);
+        pet.setOwner(this);
+        return this;
+    }
+
+    public Owner removePet(Pet pet) {
+        this.pets.remove(pet);
+        pet.setOwner(null);
+        return this;
+    }
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -89,8 +128,7 @@ public class Owner implements Serializable {
 
     @Override
     public String toString() {
-        return "Owner{" +
-                "id=" + id +
+        return "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +
