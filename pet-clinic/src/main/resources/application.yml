@@ -37,3 +37,8 @@ datasources:
     driverClassName: org.postgresql.Driver
     username: postgres
     password: root
+
+consul:
+  client:
+    registration:
+      enabled: true

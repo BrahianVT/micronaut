@@ -19,3 +19,8 @@ endpoints:
   all:
     enabled: true
     sensitive: false
+
+consul:
+  client:
+    registration:
+      enabled: true
