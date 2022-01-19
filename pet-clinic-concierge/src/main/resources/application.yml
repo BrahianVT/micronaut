@@ -1,5 +1,14 @@
-consul.client.registration.enabled: true
-ribbon:
-  VipAddress: test
-  ServerListRefreshInterval: 2000
-hystrix.stream.enabled: false
+micronaut:
+  application:
+    name: petClinicConcierge
+  config-client:
+    enabled: true
+  server:
+    port: 32584
+
+
+consul:
+  client:
+    registration:
+      enabled: true
+    default-zone: "consul:8500"

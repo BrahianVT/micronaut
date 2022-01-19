@@ -2,11 +2,11 @@ micronaut:
   application:
     name: petClinicReviews
   server:
-    port: 8083
+    port: 32583
 
 
 mongodb:
-  uri: mongodb://localhost:27017/pet-clinic-reviews
+  uri: mongodb://mongodb:mongodb@host.docker.internal:27017/pet-clinic-reviews
   databaseName: pet-clinic-reviews
   collectionName: vet-reviews
 
@@ -22,5 +22,6 @@ endpoints:
 
 consul:
   client:
+    default-zone: "consul:8500"
     registration:
       enabled: true

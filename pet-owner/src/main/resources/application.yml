@@ -2,4 +2,33 @@ micronaut:
   application:
     name: pet-owner
   server:
-    port: -1
+    port: 32581
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+
+datasources:
+  default:
+    url: "jdbc:postgresql://host.docker.internal:5432/postgres"
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: root
+
+jpa:
+  default:
+    entity_scan:
+      packages:
+        - com.pet.domain
+    properties:
+      hibernate:
+        show_sql: false
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        enable_lazy_load_no_trans: true
+
+consul:
+  client:
+    default-zone: "consul:8500"
+    registration:
+      enabled: true
