@@ -1,0 +1,5 @@
+consul.client.registration.enabled: true
+ribbon:
+  VipAddress: test
+  ServerListRefreshInterval: 2000
+hystrix.stream.enabled: false
