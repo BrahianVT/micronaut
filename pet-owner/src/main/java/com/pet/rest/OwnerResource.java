@@ -80,7 +80,7 @@ public class OwnerResource {
     }
 
     @Version("2")
-    @Get("/owners/{id}")
+    @Get("/owners2/{id}")
     @ExecuteOn(TaskExecutors.IO)
     public Optional<OwnerDTO> getOwnerV2(@PathVariable Long id){
         log.debug("Rest request get Owner v2  " + id);

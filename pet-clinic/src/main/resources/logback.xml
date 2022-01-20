@@ -1,5 +1,15 @@
 <configuration>
 
+    <property scope="context" name="app_name" value="pet-clinic"/>
+    <property scope="context" name="app_port" value="8082"/>
+
+    <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <param name="Encoding" value="UTF-8"/>
+        <remoteHost>host.docker.internal</remoteHost>
+        <port>5000</port>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+    </appender>
+
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <withJansi>false</withJansi>
         <!-- encoders are assigned the type
@@ -9,11 +19,11 @@
         </encoder>
     </appender>
 
-    <root level="info">
+    <root level="debug">
         <appender-ref ref="STDOUT" />
+        <appender-ref ref="logstash"/>
     </root>
 
-    <logger name="io.micronaut.security" level="TRACE"/>
-    <logger name="io.micronaut.http.client" level="DEBUG" />
+    <logger name="io.micronaut.tracing" level="TRACE"/>
 
 </configuration>

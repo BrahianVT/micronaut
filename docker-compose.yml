@@ -49,7 +49,7 @@ services:
         - "32581:32581"
     depends_on:
         - consul
-  
+        - pet-clinic-reviews
   pet-clinic:
     image: "pet-clinic-0.1-image"
     ports:

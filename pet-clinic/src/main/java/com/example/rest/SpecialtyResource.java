@@ -16,7 +16,7 @@ import io.micronaut.security.rules.SecurityRule;
 import java.util.List;
 
 @Controller("/api")
-@Secured(SecurityRule.IS_AUTHENTICATED)
+@Secured(SecurityRule.IS_ANONYMOUS)
 public class SpecialtyResource {
 
     private final SpecialtyService specialtyService;
