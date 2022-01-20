@@ -12,3 +12,11 @@ consul:
     registration:
       enabled: true
     default-zone: "consul:8500"
+
+tracing:
+  zipkin:
+    http:
+      url: http://host.docker.internal:9411
+    enabled: true
+    sampler:
+      probability: 1

@@ -1,13 +1,14 @@
 package com.gateway.rest.petowner;
 
 import com.gateway.service.dto.OwnerDTO;
+import io.micronaut.data.model.Pageable;
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.*;
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.retry.annotation.Retryable;
 
-import java.awt.print.Pageable;
+
 import java.util.List;
 import java.util.Optional;
 

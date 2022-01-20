@@ -16,6 +16,7 @@ import io.micronaut.http.annotation.*;
 import io.micronaut.http.uri.UriBuilder;
 import io.micronaut.scheduling.TaskExecutors;
 import io.micronaut.scheduling.annotation.ExecuteOn;
+import io.micronaut.tracing.annotation.ContinueSpan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,6 +40,7 @@ public class OwnerResource {
     }
 
     @Post("/owners")
+    @ContinueSpan
     @ExecuteOn(TaskExecutors.IO)
     public HttpResponse<OwnerDTO> createOwner(@Body OwnerDTO ownerDTO) throws URISyntaxException {
         log.debug("Rest createOwner " + ownerDTO);
@@ -52,6 +54,7 @@ public class OwnerResource {
     }
 
     @Put("/owners")
+    @ContinueSpan
     @ExecuteOn(TaskExecutors.IO)
     public HttpResponse<OwnerDTO> updateOwner(@Body OwnerDTO ownerDTO) throws URISyntaxException {
         log.debug("Rest request to to update Owner :" + ownerDTO);
@@ -64,6 +67,7 @@ public class OwnerResource {
 
     @Get("/owners")
     @ExecuteOn(TaskExecutors.IO)
+    @ContinueSpan
     public HttpResponse<List<OwnerDTO>> getAllOwners(HttpRequest request, Pageable pageable){
         log.debug(" Rest request to get a page ot owners ");
         Page<OwnerDTO> page = ownerService.findAll(pageable);
@@ -74,6 +78,7 @@ public class OwnerResource {
     @Get("/owners/{id}")
     @Version("1")
     @ExecuteOn(TaskExecutors.IO)
+    @ContinueSpan
     public Optional<OwnerDTO> getOwner(@PathVariable Long id){
         log.debug("Rest request get Owner " + id);
         return ownerService.findOne(id);
@@ -82,6 +87,7 @@ public class OwnerResource {
     @Version("2")
     @Get("/owners2/{id}")
     @ExecuteOn(TaskExecutors.IO)
+    @ContinueSpan
     public Optional<OwnerDTO> getOwnerV2(@PathVariable Long id){
         log.debug("Rest request get Owner v2  " + id);
         return ownerService.findOne(id);
@@ -89,6 +95,7 @@ public class OwnerResource {
 
     @Delete("/owners/{id}")
     @ExecuteOn(TaskExecutors.IO)
+    @ContinueSpan
     public HttpResponse deleteOwners(@PathVariable Long id){
         log.debug("Request to delete Owner :" + id);
         ownerService.delete(id);

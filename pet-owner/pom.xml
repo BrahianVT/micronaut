@@ -168,6 +168,28 @@
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-discovery-client</artifactId>
     </dependency>
+      <dependency>
+          <groupId>io.micronaut</groupId>
+          <artifactId>micronaut-tracing</artifactId>
+      </dependency>
+
+    <!-- Micrometer -->
+    <dependency>
+      <groupId>io.micronaut.micrometer</groupId>
+      <artifactId>micronaut-micrometer-core</artifactId>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/io.micronaut.micrometer/micronaut-micrometer-registry-prometheus -->
+    <dependency>
+      <groupId>io.micronaut.micrometer</groupId>
+      <artifactId>micronaut-micrometer-registry-prometheus</artifactId>
+      <version>2.1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.micronaut</groupId>
+      <artifactId>micronaut-management</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
